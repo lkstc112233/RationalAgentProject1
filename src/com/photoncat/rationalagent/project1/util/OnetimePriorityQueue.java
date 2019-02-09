@@ -21,6 +21,10 @@ public class OnetimePriorityQueue<Element> extends PriorityQueue<Map.Entry<Eleme
         super(Map.Entry.comparingByValue());
     }
 
+    public boolean add(Element key, Integer value) {
+        return offer(new AbstractMap.SimpleEntry<>(key, value));
+    }
+
     /**
      * @return true if the element is added into the queue. false if the element is extracted already.
      */
