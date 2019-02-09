@@ -32,17 +32,21 @@ public class LoadedGraph implements Iterable<LoadedGraph.GraphNode>{
             return y;
         }
     }
+
     /**
      * Nodes storage.
      */
     private List<GraphNode> nodes = new ArrayList<>();
     private Map<GraphNode, Map<GraphNode, Integer>> edges = new TreeMap<>();
+
     void addNode(int id, int x, int y) {
         nodes.add(new GraphNode(id, x, y));
     }
+
     void sortNodes() {
         nodes.sort(Comparator.comparingInt(n -> n.id));
     }
+
     void addEdge(int from, int to, int distance) {
         if (!edges.containsKey(nodes.get(from))) {
             edges.put(nodes.get(from), new TreeMap<>());
