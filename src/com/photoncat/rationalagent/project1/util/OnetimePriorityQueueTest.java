@@ -17,7 +17,9 @@ public class OnetimePriorityQueueTest {
         assert queue.peek().getKey() == 1;
         assert queue.add(3, 3);
         assert queue.peek().getKey() == 3;
+        assert !queue.extracted(3);
         assert queue.poll().getKey() == 3;
+        assert queue.extracted(3);
         assert queue.peek().getKey() == 1;
         assert !queue.add(3, 3);
         assert !queue.add(3, 2);
@@ -25,9 +27,12 @@ public class OnetimePriorityQueueTest {
         assert queue.peek().getKey() == 1;
         assert queue.add(2, 3);
         assert queue.peek().getKey() == 2;
+        assert !queue.extracted(2);
         assert queue.poll().getKey() == 2;
+        assert queue.extracted(2);
         assert !queue.isEmpty();
         assert queue.poll().getKey() == 1;
+        assert queue.extracted(1);
         assert queue.isEmpty();
         System.out.println("All test passed.");
     }
