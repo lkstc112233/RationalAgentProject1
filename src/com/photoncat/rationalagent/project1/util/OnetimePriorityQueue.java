@@ -63,4 +63,9 @@ public class OnetimePriorityQueue<Element> extends PriorityQueue<Map.Entry<Eleme
         super.clear();
         extracted.clear();
     }
+
+    @Override
+    public int size() {
+        throw new IllegalStateException();
+    }
 }
