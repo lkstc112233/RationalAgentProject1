@@ -37,8 +37,10 @@ public class AStarAlgorithm implements Algorithm {
     public int shortestPath(int start, int end) {
         OnetimePriorityQueue<LoadedGraph.GraphNode> frienge = new OnetimePriorityQueue<>();
         Map<LoadedGraph.GraphNode, Integer> realCost = new HashMap<>(); // g(n)
+        var starting = graph.getNode(start);
         var goal = graph.getNode(end);
-        frienge.add(graph.getNode(start), heuristics.heuristic(graph.getNode(start), goal));
+        frienge.add(starting, heuristics.heuristic(starting, goal));
+        realCost.put(starting, 0);
         while (!frienge.isEmpty() && frienge.peek().getKey() != goal) {
             var pair = frienge.poll();
             var currentNode = pair.getKey();
@@ -46,7 +48,7 @@ public class AStarAlgorithm implements Algorithm {
             for (var nodeNeighbour : currentNode) {
                 if (!frienge.extracted(nodeNeighbour)) {
                     int newCost = currentCost + currentNode.distanceTo(nodeNeighbour);
-                    if (realCost.containsKey(nodeNeighbour) && realCost.get(nodeNeighbour) > newCost) {
+                    if (!realCost.containsKey(nodeNeighbour) || realCost.get(nodeNeighbour) > newCost) {
                         realCost.put(nodeNeighbour, newCost);
                     }
                     frienge.add(nodeNeighbour, newCost + heuristics.heuristic(nodeNeighbour, goal));
