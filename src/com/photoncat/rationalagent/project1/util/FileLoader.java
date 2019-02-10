@@ -37,7 +37,7 @@ public class FileLoader {
 	 * @throws IOException
 	 */
 	private static LoadedGraph load(ConvenientStreamTokenizer tokens) throws IOException {
-        LoadedGraph program = new LoadedGraph();
+        LoadedGraph graph = new LoadedGraph();
         int token = 0;
         // Parse vertices.
         token = tokens.nextToken();
@@ -45,24 +45,24 @@ public class FileLoader {
             panic("Missing 'Vertices' field.");
         }
         while (true) {
-            if (!parseOptionalGraphNode(tokens, program)) break;
+            if (!parseOptionalGraphNode(tokens, graph)) break;
         }
-        program.sortNodes();
+        graph.sortNodes();
         // Parse edges.
         token = tokens.nextToken();
         if (token != ConvenientStreamTokenizer.TT_WORD || !tokens.sval.equalsIgnoreCase("Edges")) {
             panic("Missing 'Edges' field.");
         }
         while (true) {
-            if (!parseOptionalEdge(tokens, program)) break;
+            if (!parseOptionalEdge(tokens, graph)) break;
         }
-        program.createEdgesCache();
-        return program;
+        graph.createEdgesCache();
+        return graph;
     }
     /**
      * @throws IllegalStateException when file is corrupted.
      */
-    private static boolean parseOptionalGraphNode(ConvenientStreamTokenizer tokens, LoadedGraph program) throws IOException {
+    private static boolean parseOptionalGraphNode(ConvenientStreamTokenizer tokens, LoadedGraph graph) throws IOException {
         if (tokens.nextToken() != ConvenientStreamTokenizer.TT_NUMBER) {
             tokens.pushBack();
             return false;
@@ -82,13 +82,13 @@ public class FileLoader {
             panic("Unexpected token at line " + tokens.lineno());
         }
         int y = (int) tokens.nval;
-        program.addNode(id, x, y);
+        graph.addNode(id, x, y);
         return true;
     }
     /**
      * @throws IllegalStateException when file is corrupted.
      */
-    private static boolean parseOptionalEdge(ConvenientStreamTokenizer tokens, LoadedGraph program) throws IOException {
+    private static boolean parseOptionalEdge(ConvenientStreamTokenizer tokens, LoadedGraph graph) throws IOException {
         if (tokens.nextToken() != ConvenientStreamTokenizer.TT_NUMBER) {
             tokens.pushBack();
             return false;
@@ -108,7 +108,7 @@ public class FileLoader {
             panic("Unexpected token at line " + tokens.lineno());
         }
         int distance = (int) tokens.nval;
-        program.addEdge(from, to, distance);
+        graph.addEdge(from, to, distance);
         return true;
     }
 }
