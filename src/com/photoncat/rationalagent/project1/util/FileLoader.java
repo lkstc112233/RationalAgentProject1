@@ -56,6 +56,7 @@ public class FileLoader {
         while (true) {
             if (!parseOptionalEdge(tokens, program)) break;
         }
+        program.createEdgesCache();
 		return program;
 	}
     /**
