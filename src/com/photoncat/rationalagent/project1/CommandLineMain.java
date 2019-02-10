@@ -1,5 +1,6 @@
 package com.photoncat.rationalagent.project1;
 
+import com.photoncat.rationalagent.project1.algorithm.AStarAlgorithm;
 import com.photoncat.rationalagent.project1.algorithm.Algorithm;
 import com.photoncat.rationalagent.project1.algorithm.DijkstraAlgorithm;
 import com.photoncat.rationalagent.project1.util.FileLoader;
@@ -29,6 +30,12 @@ public class CommandLineMain {
         var before = System.nanoTime();
         int answer = algorithm.shortestPath(start, end);
         var after = System.nanoTime();
+        System.out.println("The path between " + start + " and " + end + " has a length of: " + answer);
+        System.out.println("Calculation ends in " + (after - before) + " ns.");
+        algorithm = new AStarAlgorithm(graph);
+        before = System.nanoTime();
+        answer = algorithm.shortestPath(start, end);
+        after = System.nanoTime();
         System.out.println("The path between " + start + " and " + end + " has a length of: " + answer);
         System.out.println("Calculation ends in " + (after - before) + " ns.");
     }
