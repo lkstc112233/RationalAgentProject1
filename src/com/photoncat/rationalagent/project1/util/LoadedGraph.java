@@ -64,6 +64,10 @@ public class LoadedGraph implements Iterable<LoadedGraph.GraphNode> {
         return edgesOfFrom.get(nodes.get(to.getId()));
     }
 
+    public GraphNode getNode(int id) {
+        return nodes.get(id);
+    }
+
     /**
      * Nodes storage.
      */
