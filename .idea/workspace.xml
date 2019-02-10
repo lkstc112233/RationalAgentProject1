@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ffe753c0-3357-4699-9676-491e1786e033" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/photoncat/rationalagent/project1/algorithm/AStarAlgorithm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/photoncat/rationalagent/project1/algorithm/Algorithm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/photoncat/rationalagent/project1/CommandLineMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/photoncat/rationalagent/project1/CommandLineMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/photoncat/rationalagent/project1/DijkstraAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/photoncat/rationalagent/project1/algorithm/DijkstraAlgorithm.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,11 +34,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/photoncat/rationalagent/project1/CommandLineMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="16" column="9" lean-forward="true" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+            <state relative-caret-position="405">
+              <caret line="27" column="57" lean-forward="true" selection-start-line="27" selection-start-column="57" selection-end-line="27" selection-end-column="57" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -49,11 +46,15 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/photoncat/rationalagent/project1/algorithm/AStarAlgorithm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="48" selection-start-line="2" selection-start-column="48" selection-end-line="2" selection-end-column="48" />
+            <state relative-caret-position="75">
+              <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="17" />
+              <folding>
+                <element signature="e#169#170#0" expanded="true" />
+                <element signature="e#193#194#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -159,10 +160,10 @@
         <option value="$PROJECT_DIR$/src/com/photoncat/rationalagent/project1/util/LoadedGraph.java" />
         <option value="$PROJECT_DIR$/src/com/photoncat/rationalagent/project1/util/OnetimePriorityQueue.java" />
         <option value="$PROJECT_DIR$/src/com/photoncat/rationalagent/project1/util/FileLoader.java" />
-        <option value="$PROJECT_DIR$/src/com/photoncat/rationalagent/project1/CommandLineMain.java" />
         <option value="$PROJECT_DIR$/src/com/photoncat/rationalagent/project1/algorithm/DijkstraAlgorithm.java" />
         <option value="$PROJECT_DIR$/src/com/photoncat/rationalagent/project1/algorithm/Algorithm.java" />
         <option value="$PROJECT_DIR$/src/com/photoncat/rationalagent/project1/algorithm/AStarAlgorithm.java" />
+        <option value="$PROJECT_DIR$/src/com/photoncat/rationalagent/project1/CommandLineMain.java" />
       </list>
     </option>
   </component>
@@ -219,7 +220,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549762290844" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1549762511018" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -442,16 +443,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/photoncat/rationalagent/project1/CommandLineMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="16" column="9" lean-forward="true" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/photoncat/rationalagent/project1/algorithm/Algorithm.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -472,8 +463,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/photoncat/rationalagent/project1/algorithm/AStarAlgorithm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="48" selection-start-line="2" selection-start-column="48" selection-end-line="2" selection-end-column="48" />
+        <state relative-caret-position="75">
+          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="17" />
+          <folding>
+            <element signature="e#169#170#0" expanded="true" />
+            <element signature="e#193#194#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/photoncat/rationalagent/project1/CommandLineMain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="57" lean-forward="true" selection-start-line="27" selection-start-column="57" selection-end-line="27" selection-end-column="57" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

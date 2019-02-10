@@ -1,5 +1,6 @@
 package com.photoncat.rationalagent.project1;
 
+import com.photoncat.rationalagent.project1.algorithm.Algorithm;
 import com.photoncat.rationalagent.project1.algorithm.DijkstraAlgorithm;
 import com.photoncat.rationalagent.project1.util.FileLoader;
 import com.photoncat.rationalagent.project1.util.LoadedGraph;
@@ -24,7 +25,7 @@ public class CommandLineMain {
         }
         int start = Integer.valueOf(args[1]);
         int end = Integer.valueOf(args[2]);
-        DijkstraAlgorithm algorithm = new DijkstraAlgorithm(graph);
+        Algorithm algorithm = new DijkstraAlgorithm(graph);
         var before = System.nanoTime();
         int answer = algorithm.shortestPath(start, end);
         var after = System.nanoTime();
