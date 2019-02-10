@@ -72,7 +72,7 @@ public class LoadedGraph implements Iterable<LoadedGraph.GraphNode> {
      * Nodes storage.
      */
     private List<GraphNode> nodes = new ArrayList<>();
-    private Map<GraphNode, Map<GraphNode, Integer>> edges = new TreeMap<>();
+    private Map<GraphNode, Map<GraphNode, Integer>> edges = new HashMap<>();
 
     void addNode(int id, int x, int y) {
         nodes.add(new GraphNode(id, x, y));
@@ -84,10 +84,10 @@ public class LoadedGraph implements Iterable<LoadedGraph.GraphNode> {
 
     void addEdge(int from, int to, int distance) {
         if (!edges.containsKey(nodes.get(from))) {
-            edges.put(nodes.get(from), new TreeMap<>());
+            edges.put(nodes.get(from), new HashMap<>());
         }
         if (!edges.containsKey(nodes.get(to))) {
-            edges.put(nodes.get(to), new TreeMap<>());
+            edges.put(nodes.get(to), new HashMap<>());
         }
         edges.get(nodes.get(from)).put(nodes.get(to), distance);
         edges.get(nodes.get(to)).put(nodes.get(from), distance);
