@@ -32,6 +32,10 @@ public class LoadedGraph implements Iterable<LoadedGraph.GraphNode>{
             return y;
         }
 
+        public int distanceTo(GraphNode node) {
+            return distanceBetween(this, node);
+        }
+
     /**
      * @return distance between two nodes. If not directly connected, return -1 instead.
      */
