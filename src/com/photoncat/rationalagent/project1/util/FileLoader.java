@@ -36,7 +36,7 @@ public class FileLoader {
      * load a graph.
 	 * @throws IOException
 	 */
-	private static LoadedGraph load(ConvenientStreamTokenizer tokens) throws IOException{
+	private static LoadedGraph load(ConvenientStreamTokenizer tokens) throws IOException {
         LoadedGraph program = new LoadedGraph();
         int token = 0;
         // Parse vertices.
@@ -57,8 +57,8 @@ public class FileLoader {
             if (!parseOptionalEdge(tokens, program)) break;
         }
         program.createEdgesCache();
-		return program;
-	}
+        return program;
+    }
     /**
      * @throws IllegalStateException when file is corrupted.
      */
