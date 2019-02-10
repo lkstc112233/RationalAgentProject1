@@ -14,7 +14,7 @@ public class DijkstraAlgorithm implements Algorithm{
     }
 
     public int shortestPath(int start, int end) {
-        OnetimePriorityQueue<LoadedGraph.GraphNode> frienge = new OnetimePriorityQueue<LoadedGraph.GraphNode>();
+        OnetimePriorityQueue<LoadedGraph.GraphNode> frienge = new OnetimePriorityQueue<>();
         frienge.add(graph.getNode(start), 0);
         var goal = graph.getNode(end);
         while (!frienge.isEmpty() && frienge.peek().getKey() != goal) {
