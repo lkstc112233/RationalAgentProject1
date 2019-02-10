@@ -31,6 +31,19 @@ public class LoadedGraph implements Iterable<LoadedGraph.GraphNode>{
         public int getY() {
             return y;
         }
+
+    /**
+     * @return distance between two nodes. If not directly connected, return -1 instead.
+     */
+    public int distanceBetween(GraphNode from, GraphNode to) {
+        if (!edges.containsKey(nodes.get(from.getId()))) {
+            return -1;
+        }
+        var edgesOfFrom = edges.get(nodes.get(from.getId()));
+        if (!edgesOfFrom.containsKey(nodes.get(to.getId()))) {
+            return -1;
+        }
+        return edgesOfFrom.get(nodes.get(to.getId()));
     }
 
     /**
