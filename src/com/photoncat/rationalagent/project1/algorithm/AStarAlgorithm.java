@@ -14,6 +14,9 @@ public class AStarAlgorithm implements Algorithm {
         int heuristic(LoadedGraph.GraphNode current, LoadedGraph.GraphNode target);
     }
 
+    /**
+     * Initialize the algorithm with a default heuristic.
+     */
     public AStarAlgorithm(LoadedGraph graph) {
         this(graph, (current, target) -> {
             int xDistance = Math.abs(current.getX() - target.getX());
@@ -35,29 +38,29 @@ public class AStarAlgorithm implements Algorithm {
 
     @Override
     public int shortestPath(int start, int end) {
-        OnetimePriorityQueue<LoadedGraph.GraphNode> frienge = new OnetimePriorityQueue<>();
-        Map<LoadedGraph.GraphNode, Integer> realCost = new HashMap<>(); // g(n)
+        OnetimePriorityQueue<LoadedGraph.GraphNode> fringe = new OnetimePriorityQueue<>();
+        Map<LoadedGraph.GraphNode, Integer> realCost = new HashMap<>(); // stores g(n)
         var starting = graph.getNode(start);
         var goal = graph.getNode(end);
-        frienge.add(starting, heuristics.heuristic(starting, goal));
+        fringe.add(starting, heuristics.heuristic(starting, goal));
         realCost.put(starting, 0);
-        while (!frienge.isEmpty() && frienge.peek().getKey() != goal) {
-            var pair = frienge.poll();
+        while (!fringe.isEmpty() && fringe.peek().getKey() != goal) {
+            var pair = fringe.poll();
             var currentNode = pair.getKey();
             int currentCost = realCost.get(currentNode);
             for (var nodeNeighbour : currentNode) {
-                if (!frienge.extracted(nodeNeighbour)) {
+                if (!fringe.extracted(nodeNeighbour)) {
                     int newCost = currentCost + currentNode.distanceTo(nodeNeighbour);
                     if (!realCost.containsKey(nodeNeighbour) || realCost.get(nodeNeighbour) > newCost) {
                         realCost.put(nodeNeighbour, newCost);
                     }
-                    frienge.add(nodeNeighbour, newCost + heuristics.heuristic(nodeNeighbour, goal));
+                    fringe.add(nodeNeighbour, newCost + heuristics.heuristic(nodeNeighbour, goal));
                 }
             }
         }
-        if (frienge.isEmpty()) {
+        if (fringe.isEmpty()) {
             return -1;
         }
-        return frienge.peek().getValue();
+        return fringe.peek().getValue();
     }
 }

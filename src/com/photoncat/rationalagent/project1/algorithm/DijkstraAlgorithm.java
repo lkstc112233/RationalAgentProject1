@@ -14,21 +14,21 @@ public class DijkstraAlgorithm implements Algorithm{
     }
 
     public int shortestPath(int start, int end) {
-        OnetimePriorityQueue<LoadedGraph.GraphNode> frienge = new OnetimePriorityQueue<>();
-        frienge.add(graph.getNode(start), 0);
+        OnetimePriorityQueue<LoadedGraph.GraphNode> fringe = new OnetimePriorityQueue<>();
+        fringe.add(graph.getNode(start), 0);
         var goal = graph.getNode(end);
-        while (!frienge.isEmpty() && frienge.peek().getKey() != goal) {
-            var pair = frienge.poll();
+        while (!fringe.isEmpty() && fringe.peek().getKey() != goal) {
+            var pair = fringe.poll();
             var currentNode = pair.getKey();
             int currentValue = pair.getValue();
             for (var nodeNeighbour: currentNode) {
-                if (!frienge.extracted(nodeNeighbour))
-                    frienge.add(nodeNeighbour, currentValue + currentNode.distanceTo(nodeNeighbour));
+                if (!fringe.extracted(nodeNeighbour))
+                    fringe.add(nodeNeighbour, currentValue + currentNode.distanceTo(nodeNeighbour));
             }
         }
-        if (frienge.isEmpty()) {
+        if (fringe.isEmpty()) {
             return -1;
         }
-        return frienge.peek().getValue();
+        return fringe.peek().getValue();
     }
 }
