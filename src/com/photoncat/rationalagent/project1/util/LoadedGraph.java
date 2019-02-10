@@ -8,16 +8,21 @@ import java.util.*;
  * @author Xu Ke
  *
  */
-public class LoadedGraph implements Iterable<LoadedGraph.GraphNode>{
-    public class GraphNode {
+public class LoadedGraph implements Iterable<LoadedGraph.GraphNode> {
+    public class GraphNode implements Iterable<LoadedGraph.GraphNode> {
         private int id;
         private int x;
         private int y;
+        private Set<GraphNode> edges;
 
         GraphNode(int id, int x, int y) {
             this.id = id;
             this.x = x;
             this.y = y;
+        }
+
+        void setEdges(Set<GraphNode> edges) {
+            this.edges = edges;
         }
 
         public int getId() {
@@ -35,6 +40,15 @@ public class LoadedGraph implements Iterable<LoadedGraph.GraphNode>{
         public int distanceTo(GraphNode node) {
             return distanceBetween(this, node);
         }
+
+        /**
+         * Provides support for <b>for-each</b> loop.
+         */
+        @Override
+        public Iterator<GraphNode> iterator() {
+            return edges.iterator();
+        }
+    }
 
     /**
      * @return distance between two nodes. If not directly connected, return -1 instead.
@@ -74,6 +88,13 @@ public class LoadedGraph implements Iterable<LoadedGraph.GraphNode>{
         edges.get(nodes.get(from)).put(nodes.get(to), distance);
         edges.get(nodes.get(to)).put(nodes.get(from), distance);
     }
+
+    void createEdgesCache() {
+        for (GraphNode node : nodes) {
+            node.setEdges(edges.get(node).keySet());
+        }
+    }
+
     /**
      * Provides support for <b>for-each</b> loop.
      */
