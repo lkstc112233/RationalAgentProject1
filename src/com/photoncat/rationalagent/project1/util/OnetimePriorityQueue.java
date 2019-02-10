@@ -50,7 +50,7 @@ public class OnetimePriorityQueue<Element> extends PriorityQueue<Map.Entry<Eleme
 
     @Override
     public Map.Entry<Element, Integer> peek(){
-        while (!super.isEmpty()) {
+        while (super.size() != 0) {
             if (extracted.contains(super.peek().getKey())) {
                 // Remove extracted elements.
                 super.poll();
