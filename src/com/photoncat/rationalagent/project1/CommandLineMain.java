@@ -1,5 +1,6 @@
 package com.photoncat.rationalagent.project1;
 
+import com.photoncat.rationalagent.project1.algorithm.DijkstraAlgorithm;
 import com.photoncat.rationalagent.project1.util.FileLoader;
 import com.photoncat.rationalagent.project1.util.LoadedGraph;
 

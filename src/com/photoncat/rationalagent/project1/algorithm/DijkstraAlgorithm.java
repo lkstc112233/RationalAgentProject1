@@ -1,14 +1,12 @@
-package com.photoncat.rationalagent.project1;
+package com.photoncat.rationalagent.project1.algorithm;
 
 import com.photoncat.rationalagent.project1.util.LoadedGraph;
 import com.photoncat.rationalagent.project1.util.OnetimePriorityQueue;
 
-import java.util.*;
-
 /**
  * A class that holds the algorithm as in Dijkstra's algorithm.
  */
-public class DijkstraAlgorithm {
+public class DijkstraAlgorithm implements Algorithm{
     private LoadedGraph graph;
 
     public DijkstraAlgorithm(LoadedGraph graph) {
