@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ffe753c0-3357-4699-9676-491e1786e033" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/com/photoncat/rationalagent/project1/algorithm/AStarAlgorithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/photoncat/rationalagent/project1/algorithm/AStarAlgorithm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/photoncat/rationalagent/project1/CommandLineMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/photoncat/rationalagent/project1/CommandLineMain.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,18 +22,30 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="28" />
+          <entry key="JAVA" value="29" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="5924" />
+          <entry key="JAVA" value="5937" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/photoncat/rationalagent/project1/CommandLineMain.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="429">
+              <caret line="48" column="35" selection-start-line="48" selection-start-column="35" selection-end-line="48" selection-end-column="35" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/photoncat/rationalagent/project1/util/OnetimePriorityQueue.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -65,11 +77,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/photoncat/rationalagent/project1/algorithm/AStarAlgorithm.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="29" column="36" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
+            <state relative-caret-position="653">
+              <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -124,8 +136,8 @@
         <option value="$PROJECT_DIR$/src/com/photoncat/rationalagent/project1/util/FileLoader.java" />
         <option value="$PROJECT_DIR$/src/com/photoncat/rationalagent/project1/algorithm/DijkstraAlgorithm.java" />
         <option value="$PROJECT_DIR$/src/com/photoncat/rationalagent/project1/algorithm/Algorithm.java" />
-        <option value="$PROJECT_DIR$/src/com/photoncat/rationalagent/project1/CommandLineMain.java" />
         <option value="$PROJECT_DIR$/src/com/photoncat/rationalagent/project1/algorithm/AStarAlgorithm.java" />
+        <option value="$PROJECT_DIR$/src/com/photoncat/rationalagent/project1/CommandLineMain.java" />
       </list>
     </option>
   </component>
@@ -428,8 +440,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/photoncat/rationalagent/project1/algorithm/AStarAlgorithm.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="29" column="36" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
+        <state relative-caret-position="653">
+          <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -438,8 +450,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/photoncat/rationalagent/project1/CommandLineMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="57" lean-forward="true" selection-start-line="27" selection-start-column="57" selection-end-line="27" selection-end-column="57" />
+        <state relative-caret-position="429">
+          <caret line="48" column="35" selection-start-line="48" selection-start-column="35" selection-end-line="48" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
