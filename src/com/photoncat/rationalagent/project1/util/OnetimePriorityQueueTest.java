@@ -11,20 +11,24 @@ public class OnetimePriorityQueueTest {
     public static void main(String[] args) {
         OnetimePriorityQueue<Integer> queue = new OnetimePriorityQueue<>();
         assert queue.isEmpty();
+        // Add some elements
         assert queue.add(1, 4);
         assert queue.peek().getKey() == 1;
         assert queue.add(2, 5);
         assert queue.peek().getKey() == 1;
         assert queue.add(3, 3);
         assert queue.peek().getKey() == 3;
+        // Examine poll.
         assert !queue.extracted(3);
         assert queue.poll().getKey() == 3;
         assert queue.extracted(3);
         assert queue.peek().getKey() == 1;
+        // Polled element cannot be re-added.
         assert !queue.add(3, 3);
         assert !queue.add(3, 2);
         assert !queue.add(3, 5);
         assert queue.peek().getKey() == 1;
+        // Decreasing un-polled key
         assert queue.add(2, 3);
         assert queue.peek().getKey() == 2;
         assert !queue.extracted(2);
