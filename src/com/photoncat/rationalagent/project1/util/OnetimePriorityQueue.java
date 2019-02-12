@@ -15,7 +15,7 @@ import java.util.*;
  * Moreover, this queue offers a method to check whether an element has been removed or not.
  */
 public class OnetimePriorityQueue<Element> extends PriorityQueue<Map.Entry<Element, Integer>> {
-    private Set<Element> extracted = new HashSet<>();
+    private Map<Element, Integer> extracted = new HashMap<>();
 
     public OnetimePriorityQueue() {
         super(Map.Entry.comparingByValue());
@@ -26,7 +26,7 @@ public class OnetimePriorityQueue<Element> extends PriorityQueue<Map.Entry<Eleme
     }
 
     public boolean extracted(Element elem) {
-        return extracted.contains(elem);
+        return extracted.containsKey(elem);
     }
 
     /**
@@ -34,7 +34,10 @@ public class OnetimePriorityQueue<Element> extends PriorityQueue<Map.Entry<Eleme
      */
     @Override
     public boolean offer(Map.Entry<Element, Integer> element) {
-        if (!extracted.contains(element.getKey())) {
+        if (!extracted.containsKey(element.getKey())) {
+            return super.offer(element);
+        } else if (extracted.get(element.getKey()) > element.getValue()) {
+            extracted.remove(element.getKey());
             return super.offer(element);
         }
         return false;
@@ -43,7 +46,7 @@ public class OnetimePriorityQueue<Element> extends PriorityQueue<Map.Entry<Eleme
     @Override
     public Map.Entry<Element, Integer> poll() {
         var elem = peek();
-        extracted.add(elem.getKey());
+        extracted.put(elem.getKey(), elem.getValue());
         super.poll();
         return elem;
     }
@@ -51,7 +54,7 @@ public class OnetimePriorityQueue<Element> extends PriorityQueue<Map.Entry<Eleme
     @Override
     public Map.Entry<Element, Integer> peek(){
         while (super.size() != 0) {
-            if (extracted.contains(super.peek().getKey())) {
+            if (extracted.containsKey(super.peek().getKey())) {
                 // Remove extracted elements.
                 super.poll();
             } else {
