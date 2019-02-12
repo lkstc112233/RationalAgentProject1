@@ -49,18 +49,16 @@ public class AStarAlgorithm implements Algorithm {
             var currentNode = pair.getKey();
             int currentCost = realCost.get(currentNode);
             for (var nodeNeighbour : currentNode) {
-                if (!fringe.extracted(nodeNeighbour)) {
-                    int newCost = currentCost + currentNode.distanceTo(nodeNeighbour);
-                    if (!realCost.containsKey(nodeNeighbour) || realCost.get(nodeNeighbour) > newCost) {
-                        realCost.put(nodeNeighbour, newCost);
-                    }
-                    fringe.add(nodeNeighbour, newCost + heuristics.heuristic(nodeNeighbour, goal));
+                int newCost = currentCost + currentNode.distanceTo(nodeNeighbour);
+                if (!realCost.containsKey(nodeNeighbour) || realCost.get(nodeNeighbour) > newCost) {
+                    realCost.put(nodeNeighbour, newCost);
                 }
+                fringe.add(nodeNeighbour, newCost + heuristics.heuristic(nodeNeighbour, goal));
             }
         }
         if (fringe.isEmpty()) {
             return -1;
         }
-        return fringe.peek().getValue();
+        return realCost.get(fringe.peek().getKey());
     }
 }

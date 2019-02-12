@@ -22,8 +22,7 @@ public class DijkstraAlgorithm implements Algorithm{
             var currentNode = pair.getKey();
             int currentValue = pair.getValue();
             for (var nodeNeighbour: currentNode) {
-                if (!fringe.extracted(nodeNeighbour))
-                    fringe.add(nodeNeighbour, currentValue + currentNode.distanceTo(nodeNeighbour));
+                fringe.add(nodeNeighbour, currentValue + currentNode.distanceTo(nodeNeighbour));
             }
         }
         if (fringe.isEmpty()) {
