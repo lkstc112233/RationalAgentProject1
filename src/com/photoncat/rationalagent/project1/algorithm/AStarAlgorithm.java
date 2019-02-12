@@ -27,7 +27,7 @@ public class AStarAlgorithm implements Algorithm {
             if (yDistance > 0) {
                 yDistance -= 1;
             }
-            return (int) (100 * Math.sqrt(xDistance * xDistance + yDistance * yDistance));
+            return (int) Math.floor(100 * Math.sqrt(xDistance * xDistance + yDistance * yDistance));
         });
     }
 
