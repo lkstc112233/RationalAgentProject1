@@ -7,8 +7,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class AStarAlgorithm implements Algorithm {
-    private LoadedGraph graph;
-    private Heuristics heuristics;
+    private final LoadedGraph graph;
+    private final Heuristics heuristics;
 
     public interface Heuristics {
         int heuristic(LoadedGraph.GraphNode current, LoadedGraph.GraphNode target);

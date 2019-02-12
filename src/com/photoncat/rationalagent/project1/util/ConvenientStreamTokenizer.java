@@ -7,11 +7,10 @@ import java.io.StreamTokenizer;
  * @author Xu Ke
  *
  */
-public class ConvenientStreamTokenizer extends StreamTokenizer {
+class ConvenientStreamTokenizer extends StreamTokenizer {
 	/**
 	 * Constructor.
 	 * The tokenizer takes alpha and digit and _ as word, parse numbers, parse symbols, ignores new lines, and takes # styled comments.
-	 * @param r
 	 */
 	public ConvenientStreamTokenizer(Reader r) {
 		super(r);

@@ -15,7 +15,7 @@ import java.util.*;
  * Moreover, this queue offers a method to check whether an element has been removed or not.
  */
 public class OnetimePriorityQueue<Element> extends PriorityQueue<Map.Entry<Element, Integer>> {
-    private Map<Element, Integer> extracted = new HashMap<>();
+    private final Map<Element, Integer> extracted = new HashMap<>();
 
     public OnetimePriorityQueue() {
         super(Map.Entry.comparingByValue());

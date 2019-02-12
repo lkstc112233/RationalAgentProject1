@@ -10,9 +10,9 @@ import java.util.*;
  */
 public class LoadedGraph implements Iterable<LoadedGraph.GraphNode> {
     public class GraphNode implements Iterable<LoadedGraph.GraphNode> {
-        private int id;
-        private int x;
-        private int y;
+        private final int id;
+        private final int x;
+        private final int y;
         private Set<GraphNode> edges;
 
         GraphNode(int id, int x, int y) {
@@ -53,7 +53,7 @@ public class LoadedGraph implements Iterable<LoadedGraph.GraphNode> {
     /**
      * @return distance between two nodes. If not directly connected, return -1 instead.
      */
-    public int distanceBetween(GraphNode from, GraphNode to) {
+    private int distanceBetween(GraphNode from, GraphNode to) {
         if (!edges.containsKey(nodes.get(from.getId()))) {
             return -1;
         }
@@ -71,8 +71,8 @@ public class LoadedGraph implements Iterable<LoadedGraph.GraphNode> {
     /**
      * Nodes storage.
      */
-    private List<GraphNode> nodes = new ArrayList<>();
-    private Map<GraphNode, Map<GraphNode, Integer>> edges = new HashMap<>();
+    private final List<GraphNode> nodes = new ArrayList<>();
+    private final Map<GraphNode, Map<GraphNode, Integer>> edges = new HashMap<>();
 
     void addNode(int id, int x, int y) {
         nodes.add(new GraphNode(id, x, y));

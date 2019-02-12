@@ -7,7 +7,7 @@ import com.photoncat.rationalagent.project1.util.OnetimePriorityQueue;
  * A class that holds the algorithm as in Dijkstra's algorithm.
  */
 public class DijkstraAlgorithm implements Algorithm{
-    private LoadedGraph graph;
+    private final LoadedGraph graph;
 
     public DijkstraAlgorithm(LoadedGraph graph) {
         this.graph = graph;

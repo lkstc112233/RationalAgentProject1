@@ -34,13 +34,11 @@ public class FileLoader {
 	}
 	/**
      * load a graph.
-	 * @throws IOException
 	 */
 	private static LoadedGraph load(ConvenientStreamTokenizer tokens) throws IOException {
         LoadedGraph graph = new LoadedGraph();
-        int token = 0;
         // Parse vertices.
-        token = tokens.nextToken();
+        int token = tokens.nextToken();
         if (token != ConvenientStreamTokenizer.TT_WORD || !tokens.sval.equalsIgnoreCase("Vertices")) {
             panic("Missing 'Vertices' field.");
         }

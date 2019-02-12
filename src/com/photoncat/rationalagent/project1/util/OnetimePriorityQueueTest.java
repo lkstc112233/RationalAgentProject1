@@ -1,13 +1,9 @@
 package com.photoncat.rationalagent.project1.util;
 
-
-import java.util.Map;
-import java.util.PriorityQueue;
-
 /**
  * A test class for OnetimePriorityQueue.
  */
-public class OnetimePriorityQueueTest {
+class OnetimePriorityQueueTest {
     public static void main(String[] args) {
         OnetimePriorityQueue<Integer> queue = new OnetimePriorityQueue<>();
         if (!queue.isEmpty()) throw new AssertionError();
